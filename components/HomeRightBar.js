@@ -1,9 +1,7 @@
 import Image from 'next/image'
 import RightBarSuggestions from './RightBarSuggestions'
 import DisplayName from './common/DisplayName'
-// import { useAccount } from 'wagmi'
 import { useEffect, useState } from 'react'
-// import truncateEthAddress from 'truncate-eth-address'
 import { useGlobalState } from '../hooks'
 import { truncate } from '../utils/truncate'
 
@@ -16,24 +14,6 @@ const style = {
 
 const HomeRightBar = ({ data }) => {
     const [userAddress, setUserAddress] = useState('')
-    // const { address } = useAccount()
-
-    //SOLANA STUFF
-    const {
-        isConnected,
-        wallet,
-        hasUserAccount,
-        posts,
-        createUser,
-        createPost,
-        updatePost,
-    } = useGlobalState();
-
-    //   useEffect(() => {
-    //     if (address) {
-    //       setUserAddress(truncateEthAddress(address))
-    //     }
-    //   }, [address])
 
     return (
         <div className={style.wrapper}>

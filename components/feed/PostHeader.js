@@ -11,13 +11,13 @@ const style = {
     usernameContainer: `feed-item-header-text text-14-bold mr-1 ml-4 cursor-pointer`,
     moreIcon: `ml-auto flex`,
 }
-//
+
 
 const PostHeader = ({ username, owner, postId }) => {
-    const {
-        hasUserAccount,
-        deletePost,
-    } = useGlobalState();
+
+    const staticDeletePost = (owner, postId) => {
+        console.log(`deleting post from: ${owner} with Id: ${postId}`)
+    }
 
     return (
         <div className={style.wrapper}>
@@ -33,7 +33,7 @@ const PostHeader = ({ username, owner, postId }) => {
             <DisplayName className={style.usernameContainer} username={truncate(username)} />
 
             <button className={style.moreIcon}>
-                <AiOutlineClose onClick={() => deletePost(owner, postId)} disabled={!hasUserAccount} />
+                <AiOutlineClose onClick={() => staticDeletePost(owner, postId)} />
             </button>
         </div>
     )

@@ -12,9 +12,7 @@ const style = {
 }
 
 const StoryItem = ({ data }) => {
-    const {
-        wallet,
-    } = useGlobalState();
+    const wallet = "11111111111"
     return (
         <div className={style.wrapper}>
             <div className={style.storyContainer}>

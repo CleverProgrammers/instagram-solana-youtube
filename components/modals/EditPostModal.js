@@ -7,13 +7,14 @@ export default function EditPostModal({ updatePost, currentEditListing, editPost
 
 
     //SOLANA STUFF
-    const {
-        wallet,
-    } = useGlobalState();
 
 
     const closeModal = () => {
         setEditPostModalOpen(false)
+    }
+
+    const staticUpdatePost = (wallet = "1111111111", currentEditPostID, caption) => {
+        console.log(`Editing post... userKey: ${wallet} with Id: ${currentEditPostID} and new caption of ${caption} `)
     }
 
     const onEdit = (e) => {
@@ -28,7 +29,7 @@ export default function EditPostModal({ updatePost, currentEditListing, editPost
         //     imageURL,
         // })
 
-        updatePost(
+        staticUpdatePost(
             wallet?.publicKey,
             currentEditPostID,
             caption
